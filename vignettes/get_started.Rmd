@@ -1,0 +1,42 @@
+---
+title: "Get started"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Get started}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(rayab)
+```
+
+Basic functionality used during testing.
+
+```{r eval=FALSE}
+make_test_plot() |>
+  ggplot_void() |>
+  ggplot_to_magick() |>
+  save_ayab_png("test_outputs/test1.png")
+make_test_plot_complex() |>
+  ggplot_void() |>
+  ggplot_to_magick() |>
+  magick_ayab(bw_method = "threshold") |>
+  save_ayab_png("test_outputs/test2.png")
+make_text_img("party") |>
+  magick_ayab(width = 60) |>
+  save_ayab_png("test_outputs/test3.png")
+make_test_plot_complex_lines |>
+  ggplot_void() |>
+  ggplot_to_magick() |>
+  magick_ayab(bw_method = "threshold") |>
+  save_ayab_png("test_outputs/test4.png")
+```
+
