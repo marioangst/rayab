@@ -107,10 +107,10 @@ image_to_knit <- magick::image_read("https://jeroen.github.io/images/frink.png")
 image_to_knit
 ```
 
-Now we can convert it with `magick_ayab`:
+Now we can convert it with `magick_to_ayab`:
 
 ```{r}
-image_to_knit |> magick_ayab()
+image_to_knit |> magick_to_ayab()
 ```
 
 # Saving images
@@ -132,6 +132,6 @@ nile_plot |>
 text_to_ayab("AYAB", width = 200, height = 100) |> 
   save_ayab_png(glue::glue("{here::here()}/tmp/text.png"))
 image_to_knit |> 
-  magick_ayab(width = 100) |> 
+  magick_to_ayab(width = 100) |> 
   save_ayab_png(glue::glue("{here::here()}/tmp/image.png"))
 ```

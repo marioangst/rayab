@@ -2,7 +2,7 @@
 output: github_document
 ---
 
-# rayab
+# 🧶 🤖 rayab 🤖 🧶
 
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
@@ -118,10 +118,10 @@ image_to_knit <- magick::image_read("https://jeroen.github.io/images/frink.png")
 image_to_knit
 ```
 
-Now we can convert it with `magick_ayab`:
+Now we can convert it with `magick_to_ayab`:
 
 ```{r}
-image_to_knit |> magick_ayab()
+image_to_knit |> magick_to_ayab()
 ```
 
 # Saving images

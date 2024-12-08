@@ -3,7 +3,7 @@
 export(ggplot_to_ayab)
 export(ggplot_to_magick)
 export(ggplot_void)
-export(magick_ayab)
+export(magick_to_ayab)
 export(make_test_plot)
 export(make_test_plot_complex)
 export(make_test_plot_complex_lines)

@@ -1,5 +1,5 @@
 
-# rayab
+# 🧶 🤖 rayab 🤖 🧶
 
 The goal of this R package is to provide functionality to create images
 suitable for *two-color* **knitting** via the AYAB (all yarns are
@@ -140,10 +140,10 @@ image_to_knit
 
 <img src="README_files/figure-gfm/unnamed-chunk-11-1.png" width="220" />
 
-Now we can convert it with `magick_ayab`:
+Now we can convert it with `magick_to_ayab`:
 
 ``` r
-image_to_knit |> magick_ayab()
+image_to_knit |> magick_to_ayab()
 ```
 
 <img src="README_files/figure-gfm/unnamed-chunk-12-1.png" width="60" />

@@ -98,7 +98,7 @@ make_text_img <- function(input_text){
 #' @export
 #'
 #' @examples
-magick_ayab <- function(fig,
+magick_to_ayab <- function(fig,
                         width = NULL,
                         height = NULL,
                         bw_method = NULL){
@@ -185,7 +185,7 @@ ggplot_to_ayab <- function(p,
   p |>
     ggplot_void() |>
     ggplot_to_magick() |>
-    magick_ayab(width = width,
+    magick_to_ayab(width = width,
                 height = height,
                 bw_method = bw_method)
 }
@@ -205,7 +205,7 @@ text_to_ayab <- function(input_text,
                          height = NULL){
   input_text |>
     make_text_img() |>
-    magick_ayab(width = width,
+    magick_to_ayab(width = width,
                 height = height)
 }
 
