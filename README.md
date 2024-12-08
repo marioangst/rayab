@@ -144,4 +144,8 @@ image_to_knit |> magick_ayab()
 To save images, we can use `save_ayab_png` from the created magick
 object. For example:
 
-`{ make_test_plot() |>   ggplot_to_ayab() |>    save_ayab_png(<my-desired-filepath>)`
+``` r
+make_test_plot() |>
+  ggplot_to_ayab() |> 
+  save_ayab_png(<my-desired-filepath>)
+```
