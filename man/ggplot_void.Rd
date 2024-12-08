@@ -9,6 +9,9 @@ ggplot_void(p)
 \arguments{
 \item{p}{The ggplot plot to process}
 }
+\value{
+A ggplot plot with only the plot area and everything else stripped
+}
 \description{
 Process ggplot object to remove everything except plot area
 }

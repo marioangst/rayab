@@ -6,7 +6,7 @@
 \alias{rayab-package}
 \title{rayab: R package for AYAB compatible images}
 \description{
-R package to create images from image or data in a format ready to be knit using the AYAB (all yarns are beautiful) software
+Functionality to create images suitable for two-color knitting via the AYAB (all yarns are beautiful) open source software/ hardware project from plots, text and images.
 }
 \author{
 \strong{Maintainer}: Mario Angst \email{mario.angst@uzh.ch}

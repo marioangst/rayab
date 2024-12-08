@@ -9,6 +9,9 @@ ggplot_to_magick(p)
 \arguments{
 \item{p}{The ggplot plot to convert}
 }
+\value{
+A magick image object
+}
 \description{
 Used internally.
 }

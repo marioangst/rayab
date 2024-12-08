@@ -1,7 +1,7 @@
 
 #' Make a simple black and whit grid test ggplot plot
 #'
-#' @return
+#' @return A ggplot plot
 #' @export
 #'
 #' @examples
@@ -19,7 +19,7 @@ make_test_plot <- function(){
 
 #' Plot a timeline test ggplot plot
 #'
-#' @return
+#' @return A ggplot plot
 #' @export
 #'
 #' @examples
@@ -35,7 +35,7 @@ make_test_plot_complex <- function(){
 
 #' Plot a timeline test ggplot plot with lines
 #'
-#' @return
+#' @return A ggplot plot
 #' @export
 #'
 #' @examples
@@ -53,7 +53,7 @@ make_test_plot_complex_lines <- function(){
 #'
 #' @param p The ggplot plot to process
 #'
-#' @return
+#' @return A ggplot plot with only the plot area and everything else stripped
 #' @export
 #'
 #' @examples
@@ -71,7 +71,7 @@ ggplot_void <- function(p){
 #'
 #' @param input_text Character string to plot
 #'
-#' @return
+#' @return A magick image object with the input text
 #' @export
 #'
 #' @examples
@@ -152,7 +152,7 @@ magick_to_ayab <- function(fig,
 #'
 #' @param p The ggplot plot to convert
 #'
-#' @return
+#' @return A magick image object
 #' @export
 #'
 #' @examples

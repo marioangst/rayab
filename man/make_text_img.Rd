@@ -9,6 +9,9 @@ make_text_img(input_text)
 \arguments{
 \item{input_text}{Character string to plot}
 }
+\value{
+A magick image object with the input text
+}
 \description{
 Create magick image object with text
 }

@@ -6,6 +6,9 @@
 \usage{
 make_test_plot_complex_lines()
 }
+\value{
+A ggplot plot
+}
 \description{
 Plot a timeline test ggplot plot with lines
 }

@@ -6,6 +6,9 @@
 \usage{
 make_test_plot()
 }
+\value{
+A ggplot plot
+}
 \description{
 Make a simple black and whit grid test ggplot plot
 }
