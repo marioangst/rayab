@@ -15,6 +15,7 @@ Suggests:
 Config/testthat/edition: 3
 Imports: 
     datasets,
+    dplyr,
     ggplot2,
     glue,
     grDevices,
