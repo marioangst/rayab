@@ -1,4 +1,10 @@
 
+#' Make a simple black and whit grid test ggplot plot
+#'
+#' @return
+#' @export
+#'
+#' @examples
 make_test_plot <- function(){
   test_coords <-
     expand.grid(x = c(1:30), y = c(1:60))
@@ -11,6 +17,12 @@ make_test_plot <- function(){
     ggplot2::scale_fill_manual(values = c("black","white"))
 }
 
+#' Plot a timeline test ggplot plot
+#'
+#' @return
+#' @export
+#'
+#' @examples
 make_test_plot_complex <- function(){
   nile_flow <- data.frame(flow = as.matrix(Nile),
                           year = time(Nile))
@@ -21,6 +33,12 @@ make_test_plot_complex <- function(){
     ggplot2::geom_point(size = 5)
 }
 
+#' Plot a timeline test ggplot plot with lines
+#'
+#' @return
+#' @export
+#'
+#' @examples
 make_test_plot_complex_lines <- function(){
   nile_flow <- data.frame(flow = as.matrix(Nile),
                           year = stats::time(Nile))
@@ -31,6 +49,14 @@ make_test_plot_complex_lines <- function(){
     ggplot2::geom_line(linewidth = 2)
 }
 
+#' Process ggplot object to remove everything except plot area
+#'
+#' @param p The ggplot plot to process
+#'
+#' @return
+#' @export
+#'
+#' @examples
 ggplot_void <- function(p){
   p_void <-
     p +
@@ -41,10 +67,37 @@ ggplot_void <- function(p){
   return(p_void)
 }
 
+#' Create magick image object with text
+#'
+#' @param input_text Character string to plot
+#'
+#' @return
+#' @export
+#'
+#' @examples
 make_text_img <- function(input_text){
   magick::image_read(glue::glue("label:{input_text}"))
 }
 
+#' Process magick image object for ayab knitting
+#'
+#' This function processes a magick image object to be suitable for knitting
+#' with ayab. It pixelates the image and then converts it to the desired
+#' width and height. Remember, one pixel is one stitch.
+#'
+#' @param fig A magick image object
+#' @param width The desired output width in pixels
+#' @param height The desired output height in pixels
+#' @param bw_method One of "threshold" or "quantize" (default).
+#' There are two black and white conversion methods, because
+#' how well the conversion works depends a bit on the properties of the image
+#' given as input (especially colors). The two methods are "quantize" and
+#' "threshold".
+#'
+#' @return A magick image object
+#' @export
+#'
+#' @examples
 magick_ayab <- function(fig,
                         width = NULL,
                         height = NULL,
@@ -93,6 +146,16 @@ magick_ayab <- function(fig,
     magick::image_scale(geometry = glue::glue("{width}x{height}!"))
 }
 
+#' Create magick image object from ggplot plot object
+#'
+#' Used internally.
+#'
+#' @param p The ggplot plot to convert
+#'
+#' @return
+#' @export
+#'
+#' @examples
 ggplot_to_magick <- function(p){
   fig <- magick::image_graph(width = 300)
   print(p)
@@ -100,6 +163,21 @@ ggplot_to_magick <- function(p){
   return(fig)
 }
 
+#' Convert ggplot plot to image suitable for knitting with AYAB
+#'
+#' @param p The ggplot plot
+#' @param width The desired output width in pixels
+#' @param height The desired output height in pixels
+#' @param bw_method One of "threshold" or "quantize" (default).
+#' There are two black and white conversion methods, because
+#' how well the conversion works depends a bit on the properties of the image
+#' given as input (especially colors). The two methods are "quantize" and
+#' "threshold".
+#'
+#' @return A magick image object
+#' @export
+#'
+#' @examples
 ggplot_to_ayab <- function(p,
                            width = NULL,
                            height = NULL,
@@ -112,6 +190,16 @@ ggplot_to_ayab <- function(p,
                 bw_method = bw_method)
 }
 
+#' Convert text to image suitable for knitting with AYAB
+#'
+#' @param input_text The desired text to be knit
+#' @param width The desired output width in pixels
+#' @param height The desired output height in pixels
+#'
+#' @return A magick image object
+#' @export
+#'
+#' @examples
 text_to_ayab <- function(input_text,
                          width = NULL,
                          height = NULL){
@@ -121,9 +209,19 @@ text_to_ayab <- function(input_text,
                 height = height)
 }
 
-save_ayab_png <- function(fig, filename){
+#' Save magick image object to png
+#'
+#' @param fig The image object
+#' @param filepath Desired output file path
+#'
+#' @return Saves object to file. Returns the file path.
+#' @export
+#'
+#' @examples
+save_ayab_png <- function(fig, filepath){
   magick::image_write(fig,
-                      path = filename,
+                      path = filepath,
                       format = "png")
+  return(filepath)
 }
 
