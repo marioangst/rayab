@@ -27,7 +27,16 @@ More information on AYAB can be found here: ([https://www.ayab-knitting.com](htt
 
 # Installation
 
-You can install the development version of rayab from [the r-universe builds of rayab](https://marioangst.r-universe.dev/rayab) with:
+You can install the development version of rayab 
+
+- from Github (requires devtools to be installed)
+
+```{r eval=FALSE}
+# install.packages("devtools")
+devtools::install_github("marioangst/rayab")
+```
+
+- or from [the r-universe builds of rayab](https://marioangst.r-universe.dev/rayab) with:
 
 ```{r eval=FALSE}
 install.packages('rayab', repos = c('https://marioangst.r-universe.dev', 'https://cloud.r-project.org'))

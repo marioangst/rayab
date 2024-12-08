@@ -122,7 +122,7 @@ do.call(file.remove, list(list.files(glue::glue("{here::here()}/tmp"), full.name
 ```
 
 
-```{r}
+```{r eval=FALSE}
 make_test_plot() |>
   ggplot_to_ayab() |> 
   save_ayab_png(glue::glue("{here::here()}/tmp/ggplot_grid.png"))

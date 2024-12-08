@@ -26,8 +26,17 @@ More information on AYAB can be found here:
 
 # Installation
 
-You can install the development version of rayab from [the r-universe
-builds of rayab](https://marioangst.r-universe.dev/rayab) with:
+You can install the development version of rayab
+
+- from Github (requires devtools to be installed)
+
+``` r
+# install.packages("devtools")
+devtools::install_github("marioangst/rayab")
+```
+
+- or from [the r-universe builds of
+  rayab](https://marioangst.r-universe.dev/rayab) with:
 
 ``` r
 install.packages('rayab', repos = c('https://marioangst.r-universe.dev', 'https://cloud.r-project.org'))
@@ -48,7 +57,7 @@ bw_pattern_plot <- make_test_plot()
 bw_pattern_plot
 ```
 
-![](README_files/figure-gfm/unnamed-chunk-3-1.png)<!-- -->
+![](README_files/figure-gfm/unnamed-chunk-4-1.png)<!-- -->
 
 rayab can process the plot to a `magick` object in a form more suitable
 for printing with AYAB. The workhorse function here is `ggplot_to_ayab`.
@@ -58,7 +67,7 @@ bw_pattern_plot |>
   ggplot_to_ayab()
 ```
 
-<img src="README_files/figure-gfm/unnamed-chunk-4-1.png" width="60" />
+<img src="README_files/figure-gfm/unnamed-chunk-5-1.png" width="60" />
 
 The default is 60 pixels wide, which can be adjusted (pixels dictate how
 wide you knit, every pixel is a stitch). By default, the height is set
@@ -69,7 +78,7 @@ bw_pattern_plot |>
   ggplot_to_ayab(width = 100, height = 30)
 ```
 
-<img src="README_files/figure-gfm/unnamed-chunk-5-1.png" width="100" />
+<img src="README_files/figure-gfm/unnamed-chunk-6-1.png" width="100" />
 
 Let’s take a more complicated plot. Here we have the levels of the river
 Nile over a number of years, and the size of crocodiles observed in the
@@ -81,7 +90,7 @@ nile_plot <-
 nile_plot
 ```
 
-![](README_files/figure-gfm/unnamed-chunk-6-1.png)<!-- -->
+![](README_files/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
 
 Let’s transform this one. Oh no, we only get a blank white image!
 
@@ -90,7 +99,7 @@ nile_plot |>
   ggplot_to_ayab()
 ```
 
-<img src="README_files/figure-gfm/unnamed-chunk-7-1.png" width="60" />
+<img src="README_files/figure-gfm/unnamed-chunk-8-1.png" width="60" />
 
 This is because the process of turning color images into black and white
 is a bit trial and error. rayab has two conversion options to do so:
@@ -106,7 +115,7 @@ nile_plot |>
   ggplot_to_ayab(bw_method = "threshold")
 ```
 
-<img src="README_files/figure-gfm/unnamed-chunk-8-1.png" width="60" />
+<img src="README_files/figure-gfm/unnamed-chunk-9-1.png" width="60" />
 
 ## Converting from text
 
@@ -116,7 +125,7 @@ We can also create simple text prints, using `text_to_ayab`:
 text_to_ayab("AYAB", width = 200, height = 100)
 ```
 
-<img src="README_files/figure-gfm/unnamed-chunk-9-1.png" width="200" />
+<img src="README_files/figure-gfm/unnamed-chunk-10-1.png" width="200" />
 
 ## Converting images
 
@@ -129,7 +138,7 @@ image_to_knit <- magick::image_read("https://jeroen.github.io/images/frink.png")
 image_to_knit
 ```
 
-<img src="README_files/figure-gfm/unnamed-chunk-10-1.png" width="220" />
+<img src="README_files/figure-gfm/unnamed-chunk-11-1.png" width="220" />
 
 Now we can convert it with `magick_ayab`:
 
@@ -137,7 +146,7 @@ Now we can convert it with `magick_ayab`:
 image_to_knit |> magick_ayab()
 ```
 
-<img src="README_files/figure-gfm/unnamed-chunk-11-1.png" width="60" />
+<img src="README_files/figure-gfm/unnamed-chunk-12-1.png" width="60" />
 
 # Saving images
 
