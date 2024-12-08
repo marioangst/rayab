@@ -1,11 +1,8 @@
 ---
-title: "🧶 Get started 🧶"
-output: rmarkdown::html_vignette
-vignette: >
-  %\VignetteIndexEntry{Get started}
-  %\VignetteEngine{knitr::rmarkdown}
-  %\VignetteEncoding{UTF-8}
+output: github_document
 ---
+
+# rayab
 
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
@@ -28,14 +25,19 @@ Not all plots or images are well suited for two-color knitting, so your mileage 
 
 More information on AYAB can be found here: ([https://www.ayab-knitting.com](https://www.ayab-knitting.com)). 
 
-This vignette documents basic functionality.
+# Installation
 
+You can install the development version of rayab from [the r-universe builds of rayab](https://marioangst.r-universe.dev/rayab) with:
+
+```{r eval=FALSE}
+install.packages('rayab', repos = c('https://marioangst.r-universe.dev', 'https://cloud.r-project.org'))
+```
+
+# Basic functionality
 
 ```{r setup}
 library(rayab)
 ```
-
-# Basic functionality
 
 ## Converting from ggplot
 
@@ -115,23 +117,10 @@ image_to_knit |> magick_ayab()
 
 # Saving images
 
-To save images, we can use `save_ayab_png` from the created magick object. For the examples we created:
+To save images, we can use `save_ayab_png` from the created magick object. For example:
 
-```{r, echo=FALSE, include=FALSE}
-do.call(file.remove, list(list.files(glue::glue("{here::here()}/tmp"), full.names = TRUE)))
-```
-
-
-```{r}
+```{
 make_test_plot() |>
   ggplot_to_ayab() |> 
-  save_ayab_png(glue::glue("{here::here()}/tmp/ggplot_grid.png"))
-nile_plot |> 
-  ggplot_to_ayab(bw_method = "threshold") |> 
-  save_ayab_png(glue::glue("{here::here()}/tmp/ggplot_lines.png"))
-text_to_ayab("AYAB", width = 200, height = 100) |> 
-  save_ayab_png(glue::glue("{here::here()}/tmp/text.png"))
-image_to_knit |> 
-  magick_ayab(width = 100) |> 
-  save_ayab_png(glue::glue("{here::here()}/tmp/image.png"))
+  save_ayab_png(<my-desired-filepath>)
 ```

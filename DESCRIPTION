@@ -14,8 +14,12 @@ Suggests:
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
 Imports: 
+    datasets,
     ggplot2,
     glue,
+    grDevices,
+    here,
     logger,
-    magick
+    magick,
+    stats
 VignetteBuilder: knitr
